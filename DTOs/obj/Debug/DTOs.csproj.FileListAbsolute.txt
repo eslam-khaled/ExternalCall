@@ -1,0 +1,8 @@
+C:\Users\EPL\source\repos\ExternalProject\DTOs\bin\Debug\DTOs.dll
+C:\Users\EPL\source\repos\ExternalProject\DTOs\bin\Debug\DTOs.pdb
+C:\Users\EPL\source\repos\ExternalProject\DTOs\bin\Debug\Newtonsoft.Json.dll
+C:\Users\EPL\source\repos\ExternalProject\DTOs\bin\Debug\Newtonsoft.Json.xml
+C:\Users\EPL\source\repos\ExternalProject\DTOs\obj\Debug\DTOs.csprojAssemblyReference.cache
+C:\Users\EPL\source\repos\ExternalProject\DTOs\obj\Debug\DTOs.csproj.CopyComplete
+C:\Users\EPL\source\repos\ExternalProject\DTOs\obj\Debug\DTOs.dll
+C:\Users\EPL\source\repos\ExternalProject\DTOs\obj\Debug\DTOs.pdb
