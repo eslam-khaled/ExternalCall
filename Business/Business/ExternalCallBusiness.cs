@@ -13,9 +13,11 @@ namespace Business.Business
 {
     public class ExternalCallBusiness
     {
-        public ResponseDTO Execute()
+        
+        public ResponseDTO Execute(ApiNotificationDTO apiNotificationDTO)
         {
-            string URL = "https://localhost:44327/api/Notifications/SendNotificationSaveToInboxbyAccountNumber";
+            string token = Utilities.getToken();
+            string URL = "https://localhost:44327/api/Notifications/ExternalSendNotificationSaveToInboxbyAccountNumber";
 
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(URL);
             httpWebRequest.ContentType = "application/json";
@@ -25,24 +27,16 @@ namespace Business.Business
             httpWebRequest.Timeout = 1000000;
             httpWebRequest.KeepAlive = true;
 
-            //string TokenParts = coreToken.Substring(0, 2)
-            //                    + coreToken.Substring(20, 2)
-            //                    + coreToken.Substring(10, 2)
-            //                    + coreToken.Substring(15, 2)
-            //                    + coreToken.Substring(5, 2);
-            //httpWebRequest.Headers.Add("CheckSum", CheckSum.CreateCheckSum(stringPayload, referenceNumber + TokenParts + coreCheckSumPassword));
-            //httpWebRequest.Headers.Add("Token", coreToken);
-            //httpWebRequest.Headers.Add("ReferenceNo", referenceNumber);
+            httpWebRequest.Headers.Add("Authorization", "Bearer " + token);
 
-            // Connecting to the server. Sending request and receiving response
+            string stringPayload = JsonConvert.SerializeObject(apiNotificationDTO);
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
-                //streamWriter.Write(stringPayload);
+                streamWriter.Write(stringPayload);
                 streamWriter.Flush();
                 streamWriter.Close();
             }
-
-            ResponseDTO baseResponseDto = new ResponseDTO();
+            ResponseDTO result = new ResponseDTO();
             try
             {
                 HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
@@ -51,20 +45,22 @@ namespace Business.Business
 
                 JObject respondData = JsonConvert.DeserializeObject<JObject>(getDataToString);
 
-                ResponseDTO Header = respondData.ToObject<ResponseDTO>();
+                 result = respondData.ToObject<ResponseDTO>();
 
-                return baseResponseDto;
+                return result;
 
             }
             catch (WebException ex)
             {
-                baseResponseDto.success = false;
-                baseResponseDto.message = "There is a problem in Money Transfer, please try in another time.";
-                baseResponseDto.messageAR = "يوجد مشكلة بعملية التحويل، الرجاء المحاولة في وقت آخر.";
-                baseResponseDto.SystemError = ex.Message;
-                return baseResponseDto;
+                result.success = false;
+                result.message = "There is a problem in Money Transfer, please try in another time.";
+                result.messageAR = "يوجد مشكلة بعملية التحويل، الرجاء المحاولة في وقت آخر.";
+                result.SystemError = ex.Message;
+                return result;
             }
 
         }
+
+
     }
 }

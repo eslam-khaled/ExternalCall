@@ -8,3 +8,13 @@ C:\Users\EPL\source\repos\ExternalProject\Business\obj\Debug\Business.csprojAsse
 C:\Users\EPL\source\repos\ExternalProject\Business\obj\Debug\Business.csproj.CopyComplete
 C:\Users\EPL\source\repos\ExternalProject\Business\obj\Debug\Business.dll
 C:\Users\EPL\source\repos\ExternalProject\Business\obj\Debug\Business.pdb
+D:\Work_Projects\ExternalCall\Business\bin\Debug\Business.dll
+D:\Work_Projects\ExternalCall\Business\bin\Debug\Business.pdb
+D:\Work_Projects\ExternalCall\Business\bin\Debug\DTOs.dll
+D:\Work_Projects\ExternalCall\Business\bin\Debug\Newtonsoft.Json.dll
+D:\Work_Projects\ExternalCall\Business\bin\Debug\DTOs.pdb
+D:\Work_Projects\ExternalCall\Business\bin\Debug\Newtonsoft.Json.xml
+D:\Work_Projects\ExternalCall\Business\obj\Debug\Business.csprojAssemblyReference.cache
+D:\Work_Projects\ExternalCall\Business\obj\Debug\Business.csproj.CopyComplete
+D:\Work_Projects\ExternalCall\Business\obj\Debug\Business.dll
+D:\Work_Projects\ExternalCall\Business\obj\Debug\Business.pdb

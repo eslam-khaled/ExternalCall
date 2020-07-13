@@ -13,11 +13,12 @@ namespace ExternalProject.Controllers
     {
         ExternalCallBusiness externalCallBusiness = new ExternalCallBusiness();
 
+
         [HttpPost]
         [Route("API/External")]
-        public ResponseDTO ExternalCall()
+        public ResponseDTO ExternalCall(ApiNotificationDTO apiNotificationDTO)
         {
-            ResponseDTO responseDTO = externalCallBusiness.Execute();
+            ResponseDTO responseDTO = externalCallBusiness.Execute(apiNotificationDTO);
 
             return responseDTO;
         }
